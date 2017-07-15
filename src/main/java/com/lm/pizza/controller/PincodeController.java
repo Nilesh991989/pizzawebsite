@@ -7,18 +7,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.lm.pizza.entity.Menu;
+import com.lm.pizza.entity.Pincodes;
 import com.lm.pizza.service.MenuService;
+import com.lm.pizza.service.PincodesService;
 
 @RestController
-public class MenuController {
+public class PincodeController {
+
 	@Autowired
-	MenuService menuService;
+	PincodesService pincodeService;
 	
-	@RequestMapping(value="/menus",method=RequestMethod.GET)
-	public List<Menu> getMainMenu(){
-		return menuService.getMenu();
+	@RequestMapping(value="/pincodes",method=RequestMethod.GET)
+	public List<Pincodes> getallPincodes()
+	{
+		return pincodeService.getPincodes();     
 	}
-	
-	
 }
